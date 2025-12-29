@@ -1,0 +1,126 @@
+
+\documentclass[preprint,12pt]{article}
+
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\frenchspacing
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+\usepackage{tikz}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{makeidx}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{ragged2e}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage[mathscr]{eucal}
+\usepackage{lmodern}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage{verbatim}
+\usepackage{fancyvrb}    % Required for \verbatiminput
+\usepackage{caption}     % For captions
+\usepackage{changepage}
+\usepackage{needspace}
+\setcounter{secnumdepth}{3}
+%\usepackage[square,numbers]{natbib}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[colorlinks=true,
+linkcolor=blue,     % For internal links: sections, equations, figures
+citecolor=blue,     % For \cite
+urlcolor=blue       % For \url and \href
+]{hyperref}
+\usepackage{cleveref} % optional: for better reference formatting
+\usepackage{nomencl}
+\usepackage{dirtree}
+\usepackage[edges]{forest}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage[T1]{fontenc}
+\usepackage{attachfile2}
+\usepackage{pdfpages}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+\usepackage{capt-of}
+
+\newcounter{bla}
+\newenvironment{refnummer}{%
+\list{[\arabic{bla}]}%
+{\usecounter{bla}%
+	\setlength{\itemindent}{0pt}%
+	\setlength{\topsep}{0pt}%
+	\setlength{\itemsep}{0pt}%
+	\setlength{\labelsep}{2pt}%
+	\setlength{\listparindent}{0pt}%
+	\settowidth{\labelwidth}{[9]}%
+	\setlength{\leftmargin}{\labelwidth}%
+	\addtolength{\leftmargin}{\labelsep}%
+	\setlength{\rightmargin}{0pt}}}
+	{\endlist}
+	
+\begin{document}
+\begin{center}
+\section*{UserGuide for UnDiFi-2D-V2}
+\end{center}
+This document serves as a detailed, step-by-step guide to the newly developed Python scripts, specifically designed for integration with the NEO solver.\\	
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Geometry creation and mesh generation}
+
+
+The software utilizes a triangular mesh. To generate this mesh, an SU2 mesh file with properly defined boundary conditions is required. This SU2 mesh can then be converted to the required format using the Python script \texttt{SU2\_triangle.py}.
+\item \textbf{Boundary Definition}  
+
+Boundary conditions are specified in the \texttt{type.dat} file using predefined boundary markers. It is important to ensure that each boundary is correctly defined according to the intended flow configuration. For detailed guidance on boundary definitions, please consult the associated research paper.
+
+\item \textbf{Run the simulation using the Shock-Capturing method}
+
+
+The second step is to run the simulation using the shock-capturing method. Please refer to the original user guide for detailed instructions on executing the simulation in shock-capturing mode.
+
+\item \textbf{shock extraction and .node file updation}
+
+
+After the solution has converged, a file named \texttt{vvvv.dat} will be generated in the \texttt{NEO\_data/output} directory. Use the Python script \texttt{UpdateNodeDetectShock.py} to extract the shock points and update the corresponding \texttt{.node} file with the updated solution. Replace the initial \texttt{.node} file with the updated version to proceed with the shock-fitting simulation.
+
+\item \textbf{Generating Shock Equation and Refined shock points}
+
+
+After extracting the shock points, a shock curve is generated using curve-fitting methods. This fitted curve is then used to compute the refined shock points. For hypersonic flow over a cylinder, use the script \texttt{Hypersonic\_Cylinder.py}; for transonic airfoil cases, use \texttt{Airfoil.py}. In cases where the shock is approximately linear, such as oblique shocks, a straight-line equation can be used to represent the shock curve and compute the corresponding refined shock points.
+
+\item \textbf{Shock data generation}
+
+After generating the refined shock points, the next step is to compute the shock data, which includes the upstream and downstream flow properties across the shock front. This is accomplished using the Python script \texttt{shock\_data.py}, which generates an Excel file containing the shock data. Use the values from this file to manually create the shock data file \texttt{sh00.dat} following the required format, and ensure that the definitions of special points are included appropriately. For details on \texttt{sh00.dat} format, please refer to the associated research paper.
+
+\item \textbf{Input Parameters}
+
+
+The \texttt{input.dat} file contains the values of essential parameters required to run the shock-fitting code. To compute \texttt{DXCELL}, a critical parameter for the remeshing process, use the Python script \texttt{dxcell.py}. For details on other parameters, please refer to the associated research paper.
+
+\item \textbf{Run the simulation using the Shock-Fitting method}
+
+
+Once all the necessary parameters are configured and the required files are placed in the working directory, the simulation can be run using the shock-fitting method. For detailed instructions on executing the simulation in shock-fitting mode, please refer to the original user guide.
+
+\item \textbf{Surface data extraction}
+
+For cases such as an airfoil or a cylinder, where surface data is required, it can be extracted from the \texttt{vvvv.dat} file, located in the \texttt{step} folder, using the Python script \texttt{Surface\_data.py}.
+\end{enumerate}
+\textbf{Note:} 
+
+\noindent To aid understanding, users are encouraged to run the \texttt{Circular\_cylinder\_M81} test case available in the \texttt{tests} folder. All required files for each task are provided in their respective folders within the directory \texttt{Circular\_cylinder\_M8\_180\_20mm/Fitting}, along with a \texttt{readme.txt} file that offers reference and detailed instructions.
+
+
+
+\end{document}

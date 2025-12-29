@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/diamond_airfoil_trial/run",
+            //"args": ["-s", "neo", "-m", "capturing", "-f", "steady"],
+           "args": ["-s", "neo", "-m", "fitting", "-f", "steady"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/tests/diamond_airfoil_trial",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Break on floating point exceptions",
+                    "text": "handle SIGFPE stop print pass"
+                },
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "logging": {
+                "moduleLoad": false, 
+                "programOutput": true ,
+                "trace": true,
+                "traceResponse": true,
+                "engineLogging": true,
+            },
+            "internalConsoleOptions": "openOnSessionStart",
+           
+        }
+    ]
+}

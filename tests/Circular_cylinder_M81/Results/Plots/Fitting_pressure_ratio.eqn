@@ -1,0 +1,3 @@
+#!MC 1410
+$!AlterData 
+  Equation = '{pressure_ratio} = {p} / 0.929122713564774'

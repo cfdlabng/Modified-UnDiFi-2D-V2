@@ -1,0 +1,75 @@
+ shock n.           1
+ shock pnt n.           1  speed:   0.0000000000000000     
+ shock pnt n.           2  speed:   6.2164462354875123E-004
+ shock pnt n.           3  speed:   1.0311412459664143E-003
+ shock pnt n.           4  speed:   1.2619298804063545E-003
+ shock pnt n.           5  speed:   1.3940931734863051E-003
+ shock pnt n.           6  speed:   1.4838397141874388E-003
+ shock pnt n.           7  speed:   1.5818847337621140E-003
+ shock pnt n.           8  speed:   1.6622705736381246E-003
+ shock pnt n.           9  speed:   1.7239386483707854E-003
+ shock pnt n.          10  speed:   1.7816044029779288E-003
+ shock pnt n.          11  speed:   1.8266819874871345E-003
+ shock pnt n.          12  speed:   1.8661795171967558E-003
+ shock pnt n.          13  speed:   1.9061013013359350E-003
+ shock pnt n.          14  speed:   1.9464630013954036E-003
+ shock pnt n.          15  speed:   1.9844623891249451E-003
+ shock pnt n.          16  speed:   2.0190222500074150E-003
+ shock pnt n.          17  speed:   2.0528445342132559E-003
+ shock pnt n.          18  speed:   2.0849832074636516E-003
+ shock pnt n.          19  speed:   2.1217548406927788E-003
+ shock pnt n.          20  speed:   2.1576211831119256E-003
+ shock pnt n.          21  speed:   2.1890640402745659E-003
+ shock pnt n.          22  speed:   2.2154373907475686E-003
+ shock pnt n.          23  speed:   2.2392453726066456E-003
+ shock pnt n.          24  speed:   2.2554860540417087E-003
+ shock pnt n.          25  speed:   2.2675900411397204E-003
+ shock pnt n.          26  speed:   2.2807506639472685E-003
+ shock pnt n.          27  speed:   2.3005154409585322E-003
+ shock pnt n.          28  speed:   2.3206162820742682E-003
+ shock pnt n.          29  speed:   4.8460073408313018E-003
+ shock n.           2
+ shock pnt n.           1  speed:   4.8460073408313018E-003
+ shock pnt n.           2  speed:   1.7150201060070179E-003
+ shock pnt n.           3  speed:   1.6966144812594422E-003
+ shock pnt n.           4  speed:   1.7713438565387409E-003
+ shock pnt n.           5  speed:   1.8212495879859813E-003
+ shock pnt n.           6  speed:   1.7658539736627073E-003
+ shock pnt n.           7  speed:   1.7300662451500144E-003
+ shock pnt n.           8  speed:   1.7197415418566443E-003
+ shock pnt n.           9  speed:   1.7333666905325986E-003
+ shock pnt n.          10  speed:   1.7453085194444817E-003
+ shock pnt n.          11  speed:   1.7396533899165828E-003
+ shock pnt n.          12  speed:   1.7224343301643502E-003
+ shock pnt n.          13  speed:   1.7100139055177344E-003
+ shock pnt n.          14  speed:   1.7002399142993837E-003
+ shock pnt n.          15  speed:   1.6927433957733713E-003
+ shock pnt n.          16  speed:   1.6935882888290598E-003
+ shock pnt n.          17  speed:                       NaN
+ shock n.           3
+ shock pnt n.           1  speed:                       NaN
+ shock pnt n.           2  speed:  0.10975557658150134     
+ shock pnt n.           3  speed:   6.2675921131040202E-002
+ shock pnt n.           4  speed:   4.7391220623026024E-003
+ shock pnt n.           5  speed:   2.5309770042104449E-004
+ shock pnt n.           6  speed:   2.0696220574900731E-004
+ shock pnt n.           7  speed:   1.6834128561656972E-003
+ dt max:   2.9605317251462666E-002
+ shock/disc. n.           1
+ shock/disc. n.           2
+ shock/disc. n.           3
+ shock/disc. n.           1
+  0.10000001000000000        1.0000000000000000     
+  0.15937223359996114       0.96059034884698946     
+  0.21971119101353309       0.92134888998586761     
+  0.28040689838667660       0.88318784222054270     
+  0.34149515928428403       0.84572617186734889     
+  0.40321706923747563       0.80912244959919877     
+  0.46508070518363942       0.77306447519659172     
+  0.52716221488781023       0.73732532937862472     
+  0.58936810530345940       0.70182702118740981     
+  0.65160580529561651       0.66651349708601537     
+  0.71397166462627348       0.63134077099665342     
+  0.77646601849912766       0.59625717221469055     
+  0.83899347567259297       0.56128244007645667     
+  0.90154944468610887       0.52639492990652248     
